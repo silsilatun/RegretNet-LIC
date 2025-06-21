@@ -372,9 +372,9 @@ class Trainer(object):
                 tf.summary.scalar("regret_multiplier", train_lag.result(), step=i + 1)
                 tf.summary.scalar("time", float(time.time() - start), step=i + 1)
 
-            train_rev.reset_states()
-            train_reg.reset_states()
-            train_lag.reset_states()
+            train_rev.reset_state()
+            train_reg.reset_state()
+            train_lag.reset_state()
 
             logger.info("epoch" + str(i) + "end")
             logger.info("time:" + str(time.time() - start))
