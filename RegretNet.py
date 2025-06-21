@@ -231,7 +231,7 @@ class Trainer(object):
 
     def _train_batch(self, batch, batch_misreports, batch_id):
         # reset misreport optimizer
-        for var in self.mis_opt.variables():
+        for var in self.mis_opt.variables:
             var.assign(tf.zeros_like(var))
         # update misreports
         for _ in range(self.mis_iter):
@@ -567,7 +567,7 @@ class Trainer(object):
             total_pay += test_rev
 
             # Regret
-            for var in self.test_mis_opt.variables():
+            for var in self.test_mis_opt.variables:
                 var.assign(tf.zeros_like(var))
             for _ in range(test_mis_iter):
                 self._test_mis_step(self.test_mis_opt, batch, batch_misreports)
